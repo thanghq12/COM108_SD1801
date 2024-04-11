@@ -1,0 +1,35 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int luachon;
+    do { 
+        printf("0. Thoat \n");
+        printf("1. Lua chon 1 \n");
+        printf("2. Lua chon 2 \n");
+        printf("3. Lua chon 3 \n");
+        printf("Moi ban nhap vao lua chon ");
+        scanf("%d",&luachon);
+        switch(luachon) {
+            case 1: 
+            printf("xu ly lua chon 1 \n");
+            break;
+            case 2:
+            printf("xu ly lua chon 2 \n");
+            break;
+            case 3: 
+            printf("xu ly lua chon 3 \n");
+            break;
+        }
+    } while(luachon >=1 && luachon<=3);
+   
+    return 0;
+}
