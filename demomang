@@ -1,0 +1,42 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    
+    // nhập vào 1 mảng
+    // in ra màn hình các phần tử trong mảng là số chẵn
+    int i,number;
+    printf("Nhap vao so phan tu cua mang:");
+    scanf("%d",&number);
+    int arr[number];
+    for(i = 0; i < number ;i ++) {
+        printf("Moi ban nhap vao phan tu o vi tri thu %d :",i);
+        scanf("%d",&arr[i]);
+    }
+    int tong = 0;
+    int dem = 0;
+    printf("cac phan tu trong mang la so chan la : ")
+    for(i = 0 ; i < number ; i ++ ) {
+        if(arr[i] % 2 == 0) {
+            printf("%d \n",arr[i]);
+            tong += arr[i];
+            dem ++;
+        }
+        
+    } 
+    //lay tong/dem 
+    printf("Tong cac phan tu trong mang la : %d ",tong);
+    //tinh trung binh cong cac phan tu trong mang la so chan  
+    
+    // tinh tong cac phan tu trong mang 
+    return 0;
+}
+//////////////////////////
