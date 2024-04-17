@@ -1,0 +1,101 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+void nhapThongTin() {
+    int tuoi;
+    char ten[100];
+    char diachi[100];
+    char kihoc[100];
+    char chuyennganh[100];
+    printf("nhap ten :");
+    scanf("%[^\n]",ten);
+    printf("nhap tuoi :");
+    scanf("%d",&tuoi); // nhap so chen vao thi ben dưới phải có getchar();
+    getchar();
+    printf("Nhap dia chi :");
+    scanf("%[^\n]",diachi);
+    getchar();
+    printf("Nhap ky hoc :");
+    scanf("%[^\n]",kihoc);
+    getchar();
+    printf("Nhap chuyen nganh :");
+    scanf("%[^\n]",chuyennganh);
+    printf(" --------In thong tin ------ \n");
+    printf("Ten :%s - Tuoi: %d - Dia chi : %s - ky hoc :%s- chuyen nganh: %s"
+    ,ten,tuoi,diachi,kihoc,chuyennganh);
+    
+}
+void tinhTong() {
+    int n,tong = 0,i;
+    printf("Nhap vao so n :");
+    scanf("%d",&n);
+    for(i = 0;i <=n;i++) {
+        tong+=i;
+    }
+    printf("Tong la %d \n",tong);
+}
+void thongTinSinhVien() {
+    int tonglop,i;
+    printf("Moi nhap vao tong so lop :");
+    scanf("%d",&tonglop);
+    int soluongsv[tonglop]; // khai báo mảng số lượng sinh viên 
+    for(i = 0; i < tonglop; i ++) {
+        printf("Nhap vao so luong sinh vien lop thu %d :",i+1);
+        scanf("%d",&soluongsv[i]);
+    }
+    // in cac phan tu trong mang 
+    //-- so luong sinh vien cac lop la 
+    int minSV = soluongsv[0];
+    int vitrimin = 0;
+    printf("So luong cac lop la %d \n",tonglop);
+    printf("Vi tri cac lop co so luong sinh vien < 30 la :\n");
+    for(i = 0;i < tonglop; i ++) {
+        //vị trí các lớp có số lượng sinh viên nhỏ hơn 30 là 
+        if(soluongsv[i] < 30) {
+            printf("%d \n",i + 1);
+        }
+        if(soluongsv[i] < minSV) {
+            minSV = soluongsv[i];
+            vitrimin = i + 1;
+        }
+       // printf("So luong sinh vien lop thu %d la %d \n",i+1,soluongsv[i]);
+    }
+    printf("Vi tri lop co so luong sinh vien nho nhat %d",vitrimin);
+    
+}
+int main()
+{
+    int luachon;
+    do {
+        printf("--------------Menu------------- \n");
+        printf("1. Nhap thong tin ca nhan \n");
+        printf("2. Tinh tong \n");
+        printf("3. Thong tin sinh vien cac lop \n");
+        printf("0. Thoat \n");
+        printf("------------------------------- \n");
+        printf("Moi ban nhap vao lua chon :");
+        scanf("%d",&luachon);
+        getchar();
+        switch(luachon) {
+            case 1:
+            nhapThongTin(); //phải gọi hàm thì mới chạy;
+            break;
+            case 2:
+            tinhTong();
+            break;
+            case 3:
+            thongTinSinhVien();
+            break;
+        }
+    }while(luachon >=1 && luachon <=3);
+    
+    return 0;
+}
+
+//.......
